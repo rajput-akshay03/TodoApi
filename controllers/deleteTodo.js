@@ -1,11 +1,11 @@
-const Todo = require("../models/Todo");
+const Todo = require("../models/todo");
 exports.deleteTodo= async(req,res)=>{
         try{
                const {id}= req.params;
                await Todo.findByIdAndDelete(id);
                res.json({
                  success:true,
-                 message:"deleted successfully",
+                 message:"deletes the content successfully",
                });
         }
         catch(err)
@@ -19,6 +19,4 @@ exports.deleteTodo= async(req,res)=>{
                 }
                )
         }
-
-
 }
